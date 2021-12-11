@@ -6,6 +6,12 @@
 #define _RAISE 2
 #define _ADJUST 3
 
+// Umlauts changed, keeping the old name
+#define DE_UE DE_UDIA // Ü
+#define DE_OE DE_ODIA // Ö
+#define DE_AE DE_ADIA // Ä
+
+
 #define I______ KC_NO    // N/A
 
 enum custom_keycodes {
@@ -16,6 +22,8 @@ enum custom_keycodes {
 };
 
 /*
+Notes
+
 KC_QUOT = ",
 KC_GRV = ~.
 KC_BSLS = |\
@@ -34,7 +42,6 @@ KC_LPRN
 
 `'|#'*+ ~ \ {}[]() € µ @ PRINT DRUCK ROLLEN PAUSE
 VOL+ VOL- MUTE PAUSE PREV NEXT
-
 EINF ENTF POS1 ENDE PG_UP PG_DOWN
 */
 
@@ -137,7 +144,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-void encoder_update_user(uint8_t index, bool clockwise) {
+bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
         if (clockwise) {
             tap_code(KC_VOLU);
@@ -152,4 +159,5 @@ void encoder_update_user(uint8_t index, bool clockwise) {
             tap_code(KC_PGUP);
         }
     }
+    return true;
 }
