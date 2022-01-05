@@ -23,7 +23,7 @@ enum encoder_names {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
-        | Knob 1: Vol Dn/Up |                  | Knob 2: Zoom in/out |
+        | Knob 1: Vol Dn/Up | MOD              | Knob 2: Zoom in/out |
         | Press: Mute       | Layer select     | Press: Zoom reset   |
         | Left              | Space            | Right               |
         | Media Previous    | Media Play/Pause | Media Next          |
@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     /*
-        | Knob 1: Vol Dn/Up |                  | Knob 2: Zoom in/out |
+        | Knob 1: Vol Dn/Up | MOD              | Knob 2: Zoom in/out |
         | Press: Mute       | Layer select     | Press: Zoom reset   |
         | 3                 | 6                | 8                   |
         | Media Previous    | 0                | Media Next          |
@@ -47,14 +47,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     /*
-        |        |       |      |
-        |        |       |      |
-        |        |       |      |
+        |                     | MOD          |                 |
+        | Toggle mark as read | Prev article | Close select    |
+        | Read Later (flag)   | Next article | Open in new tab |
      */
     [2] = LAYOUT(
         _______, MO(6)  , _______,
-        _______, _______, _______,
-        _______, _______, _______
+        KC_M   , KC_K   , KC_O,
+        KC_S   , KC_J   , KC_V
     ),
 
     /*
