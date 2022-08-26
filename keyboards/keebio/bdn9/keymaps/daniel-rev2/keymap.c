@@ -58,14 +58,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     /*
-        |        |       |      |
-        |        |       |      |
-        |        |       |      |
+        |         | MOD      |               |
+        | Restart | Step Out | Run to Cursor |
+        | Resume  | Step In  | Step over     |
      */
     [3] = LAYOUT(
-        _______, MO(6)  , _______,
-        _______, _______, _______,
-        _______, _______, _______
+        _______,     MO(6),       _______,
+        LCTL(KC_F5), LSFT(KC_F8), LSA(KC_9),
+        KC_F9,       KC_F7,       KC_F8
     ),
 
     /*
